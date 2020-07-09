@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "./Components/Login/Style.scss";
 import { Login } from './Components/Login/Login'
 import { Register } from './Components/Login/Register'
-import { Dashboard } from './Components/Login/Dashboard'
+import { AddEmployee } from './Components/Employee/AddEmployee.jsx';
+import { GetAllEmployee } from './Components/Employee/GetAllEmployee';
+import { Update } from './Components/Employee/Update'
+
 class App extends Component {
   render() {
     return (
@@ -11,7 +14,9 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/addEmployee" component={AddEmployee} />
+          <Route path="/dashboard" component={GetAllEmployee} />
+          <Route path="/update" component={Update} />
         </Router>
       </div>
     );
