@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import "./Components/Login/Style.scss";
+//import "./Components/Login/Style.scss";
 import { Login } from './Components/Login/Login'
-import { Register } from './Components/Login/Register'
+import { Register } from './Components/Registration/Register'
 import { AddEmployee } from './Components/Employee/AddEmployee.jsx';
 import { GetAllEmployee } from './Components/Employee/GetAllEmployee';
 import { Update } from './Components/Employee/Update'

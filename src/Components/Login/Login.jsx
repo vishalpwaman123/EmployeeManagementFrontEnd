@@ -1,5 +1,5 @@
 import React from "react";
-import "../Login/Style.scss";
+import "../StyleCss/Style.scss";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Grid } from "@material-ui/core";
@@ -41,11 +41,11 @@ export class Login extends React.Component {
 
     switch (name) {
       case "email":
-        formErrors.email = emailRegex.test(value) ? "" : "invalid email address";
+        formErrors.email = emailRegex.test(value) ? "" : "Invalid Email Address";
         break;
 
       case "password":
-        formErrors.password = value.length < 6 ? "minimum 6 characaters required" : "";
+        formErrors.password = value.length < 6 ? "Minimum 6 Characaters Required" : "";
         break;
 
       default:
@@ -71,11 +71,12 @@ export class Login extends React.Component {
             onChange={this.handleChange}
             label="Email Id" variant="outlined"
             title="Email Id is required" required />
-        </div>
-        <div className="error">
-        {formErrors.email.length > 0 && (
-            <span className1="errorMessage">{formErrors.email}</span>
-          )}
+            <div  className="error">
+            {formErrors.email.length > 0 && (
+              <span id="standard-error-helper-text"
+               className1="errorMessage">{formErrors.email}</span>
+            )}
+          </div>
         </div>
         <div className="text">
           <TextField
@@ -86,11 +87,11 @@ export class Login extends React.Component {
             value={this.state.Password}
             label="Password" variant="outlined"
             required />
-        </div>
-        <div className="error">
-        {formErrors.password.length > 0 && (
-            <span className1="errorMessage" >{formErrors.password}</span>
-          )}
+          <div className="error">
+            {formErrors.password.length > 0 && (
+              <span className1="errorMessage" >{formErrors.password}</span>
+            )}
+          </div>
         </div>
         <Grid item xs={12} className="footers">
           <div className="btn">
@@ -98,7 +99,7 @@ export class Login extends React.Component {
               variant="contained"
               type="button"
               color="primary"
-              onClick={e => this.onSubmit(e)}
+              //onClick={e => this.onSubmit(e)}
               className="btn"> Login </Button>
           </div>
           <div >
